@@ -27,3 +27,10 @@ To run our model under five-fold cross-validation, please run
 python covid_train.py --save_dir ckpts/combonet --num_folds 5
 ```
 
+## Model inference 
+
+To use ComboNet to predict synergy for new drug combinations, please run
+```
+python predict.py --checkpoint_dir ckpts/combonet --test_path data/covid/synergy_experiment.csv
+```
+If there are multiple model checkpoints in `checkpoint_dir`, the above script will combine them as a model ensemble. The output score will be an average of scores from each model. Compounds with higher scores are more likely to be synergistic.
