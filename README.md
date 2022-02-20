@@ -11,7 +11,14 @@ Our model is tested in Linux with the following packages:
 
 ## Data
 
-The covid combination data is stored in the `data/` folder.
+The covid combination data is stored in the `data/covid` folder.
+* `data/covid/dti.csv` is the drug-target interaction data
+* `data/covid/single_agent.csv` is the single-agent antiviral activity data
+* `data/covid/synergy_train.csv` is the drug combination synergy data (training set)
+* `data/covid/synergy_test.csv` is the drug combination synergy data (test set)
+* `data/covid/synergy_test.csv` is the drug combination synergy data (test set under "compounds out" strategy)
+* `data/covid/synergy_experiment.csv` contains the top 30 drug combinations ranked by ComboNet and we experimentally tested them in a VeroE6 CPE assay.
+
 
 ## Model training
 
