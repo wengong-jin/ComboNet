@@ -101,9 +101,9 @@ def prepare_data(args):
     args.use_compound_names = True
     covid_data = get_data(path=args.covid_path, args=args)
     src_combo = get_data(path=args.combo_path, args=args)
-    covid_combo_train = get_data(path=args.covid_combo1, args=args)
-    covid_combo_test = get_data(path=args.covid_combo2, args=args)
-    covid_combo_val = get_data(path=args.covid_combo3, args=args)
+    covid_combo_train = get_data(path=args.covid_combo_train, args=args)
+    covid_combo_test = get_data(path=args.covid_combo_test, args=args)
+    covid_combo_val = get_data(path=args.covid_combo_val, args=args)
     args.use_compound_names = False
     print("combo training set, before filtering duplicates", len(covid_combo_train))
 
@@ -249,12 +249,12 @@ def run_training(args, save_dir):
 
 if __name__ == "__main__":
     parser = ArgumentParser()
-    parser.add_argument('--dti_path', default="data/covid/hiv_covid.csv")
+    parser.add_argument('--dti_path', default="data/covid/dti.csv")
     parser.add_argument('--combo_path', default="data/hiv/synergy_bliss.csv")
-    parser.add_argument('--covid_path', default="data/covid/ncats_single.csv")
-    parser.add_argument('--covid_combo1', default="data/covid/synergy_ncats.csv")
-    parser.add_argument('--covid_combo2', default="data/covid/synergy_unc.csv")
-    parser.add_argument('--covid_combo3', default="data/covid/synergy_reframe.csv")
+    parser.add_argument('--covid_path', default="data/covid/single_agent.csv")
+    parser.add_argument('--covid_combo_train', default="data/covid/synergy_train.csv")
+    parser.add_argument('--covid_combo_test', default="data/covid/synergy_test.csv")
+    parser.add_argument('--covid_combo_val', default="data/covid/synergy_valid.csv")
     parser.add_argument('--single_lambda', type=float, default=0.1)
     parser.add_argument('--combo_lambda', type=float, default=1)
     parser.add_argument('--dti_lambda', type=float, default=10)
