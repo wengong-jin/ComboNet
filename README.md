@@ -24,6 +24,6 @@ The covid combination data is stored in the `data/covid` folder.
 
 To run our model under five-fold cross-validation, please run
 ```
-python covid_train.py --save_dir ckpts/combonet
+python covid_train.py --save_dir ckpts/combonet --num_folds 5
 ```
 
